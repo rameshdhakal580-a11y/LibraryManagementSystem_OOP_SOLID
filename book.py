@@ -4,8 +4,20 @@ class Book:
         self.__author = author
         self.__price = price
 
-    def get_details(self):
-        return f"Title: {self.__title}, Author: {self.__author}, Price: ${self.__price}"
+    # Getters for encapsulation
+    @property
+    def title(self):
+        return self.__title
 
-    def calculate_late_fee(self, days_late):
-        raise NotImplementedError("Subclass must implement abstract method")
+    @property
+    def author(self):
+        return self.__author
+
+    @property
+    def price(self):
+        return self.__price
+
+    def calculate_late_fee(self, days):
+        raise NotImplementedError("Subclasses must implement calculate_late_fee")
+
+
